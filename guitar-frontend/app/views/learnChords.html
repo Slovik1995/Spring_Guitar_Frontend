@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body ng-controller="LearnChordsCtrl">
+<div >
+  <h1>This level chords</h1>
+
+
+  <table>
+    <tr ng-repeat="x in thisLevelChords">
+      <td><img ng-src="/images/picturesOfChords/{{x}}.png" /><strong>{{x}}</strong></td>
+      <!--<td><div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/images/picturesOfChords/{{x}}.png">
+            <img src="/images/picturesOfChords/{{x}}.png" alt="Fjords" style="width:100%">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div></td>-->
+    </tr>
+  </table>
+  </br>
+
+<div ng-if='previousLevelChords[0]!="null"'>
+  <h1>Previous level chords</h1>
+  <table>
+    <tr ng-repeat="x in previousLevelChords">
+      <td><img ng-src="/images/picturesOfChords/{{x}}.png"/><strong>{{x}}</strong></td>
+    </tr>
+  </table>
+</div>
+  <!--<img ng-src="{{pic}}" alt="Description" />
+  {{myurl1}}-->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div ng-controller="myCtrl" qwe={{song.chords}}>
+  <div class="row">
+    <div class="col-sm-8" data-html="true">
+  <h2>{{song.title}} <small>{{song.author}}</small></h2>
+
+
+      <!--  {{count}}
+      {{playerTime}}
+    -->
+<!--  <button ng-click="myFunction()">FORWARD!</button>
+-->
+  <div class="ne-audio">
+    <audio id="player" ng-src="http://localhost:8080/play/{{songUrlName}}"  controls ng-click="manageChords()"></audio>
+  </div>
+
+      </br>
+        <label class="mr-sm-2" for="metronome">Metronome</label>
+      </br>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" ng-model="metronome" id="metronome" ng-change="updateSelect(metronome)">
+          <option selected="selected" value="30">30</option>
+          <option value="60">60</option>
+          <option value="120">120</option>
+        </select>
+<i>&nbsp</i>
+      <i ng-show="(audio.paused || previousPace!=pace) && touched" class="fa fa-play" aria-hidden="true" ng-click="playAudio()"></i>
+      <i ng-show="(!audio.paused) && previousPace==pace && touched" class="fa fa-pause" aria-hidden="true" ng-click="playAudio()"></i>
+
+
+      <h2>Lyrics</h2>
+<div class="noind well">
+      {{song.lyrics}}</br>
+</div>
+  </br>
+
+</div>
+<div class="col-sm-4">
+  <h2>{{loggedUser}}<small>&nbsp; logged user</small></h2>
+  <div>
+  <img ng-src="images/chordsLetters/{{t2}}.png" alt="Description" />
+  </div>
+  <table class="fixed">
+    <col width="25px" />
+    <col width="300px" />
+    <tr>
+      <td><h2>{{t4}}</h2></td>
+      <td><h2><small>&nbsp; upcoming chord</small></h2></td>
+    </tr>
+  </table>
+
+  <table>
+  <tr>
+    <td><h2 ng-bind-html="song.strimming"></h2></td>
+    <td><h2><small>&nbsp;strumming</small></h2></td>
+  </tr>
+  </table>
+  <h2>{{song.level}} <small>level</small></h2>
+  <!--
+<div style="color:#0000FF">
+  <embed id="player" style="height:100%;width:100%" src="http://localhost:8080/try/adventures" controller="true" autoplay="true" autostart="True" type="audio/mp3"/>
+</div>
+-->
+
+<h2>{{song.necessaryChords}} <small>necessary chords</small></h2>
+  <button id="canPlayButton" ng-show="alreadyLearned==false" type="button" class="btn btn-success" ng-click="checkThatSong()">I can play that</button>
+
+  <!--
+
+  </br></br>
+  -----------------------------------
+  </br>
+  all remaining chords:        {{xx}}
+  </br>
+  first chord and time:        {{yy}}
+  </br>
+  second chord and time:       {{zz}}
+  </br>
+  first chord time:            {{t1}}
+  </br>
+  first chord:                 {{t2}}
+  </br>
+  second chord time:           {{t3}}
+  </br>
+  second chord:                {{t4}}
+  </br>
+  duration:                    {{czas}}
+  </br>
+  remaining part:              {{rem}}
+
+  </br>
+  currentPlayerSecond:          {{currentPlayerSecond}}
+
+  </br>
+  -----------------------------------
+  </br>
+  -->
+</div>
+  </div>
+</div>
+</body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+
+<body>
+<div ng-controller="LoginCtrl">
+  <form ng-submit="login.tryLogin()">
+
+    <p>
+      <label for="inputUser" class="sr-only">User name</label>
+      <input type="text" id="inputUser" class="form-control" placeholder="User name" required="" autofocus=""
+             ng-model="login.credentials.username">
+    </p>
+    <p>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""
+             ng-model="login.credentials.password">
+    </p>
+    <input type="hidden"
+           name="${_csrf.parameterName}"
+           value="${_csrf.token}"/>
+    <button type="submit" class="btn">Log in</button>
+  </form>
+</div>
+</body>
+</html>
